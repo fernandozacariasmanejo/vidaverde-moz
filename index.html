@@ -295,8 +295,7 @@
   </div>
   </section>
 
-	
-  <section class="carrinho" id="carrinho">
+	<section class="carrinho" id="carrinho">
 
   <h2>🛒 Carrinho</h2>
 
@@ -306,18 +305,36 @@
     Total: 0 MT
   </h3>
 
+  <!-- 🚚 ENVIO -->
+  <h3>🚚 Entrega</h3>
+
+  <select id="metodoEntrega" onchange="atualizarCarrinho()">
+
+    <option value="0">Recolha na loja (Grátis)</option>
+    <option value="50">Entrega normal (50 MT)</option>
+    <option value="100">Entrega rápida (100 MT)</option>
+
+  </select>
+
+  <br><br>
+
+  <!-- 📍 ENDEREÇO -->
+  <input
+    type="text"
+    id="endereco"
+    placeholder="Digite o seu endereço de entrega"
+    style="width:100%; padding:8px; margin-top:10px;"
+  >
+
+  <br><br>
+
+  <!-- 💳 PAGAMENTO -->
   <select id="metodoPagamento">
 
-    <option value="">
-      Escolha o método de pagamento
-    </option>
-
+    <option value="">Escolha o método de pagamento</option>
     <option>M-Pesa</option>
-
     <option>e-Mola</option>
-
     <option>Cartão Bancário</option>
-
     <option>Pagamento na Entrega</option>
 
   </select>
@@ -329,7 +346,6 @@
   </button>
 
 </section>
-
 
 
 <script>
@@ -350,7 +366,7 @@ function adicionarCarrinho(nome, preco){
   atualizarContador();
 }
 
-/* 🧾 ATUALIZAR LISTA DO CARRINHO */
+/* 🧾 ATUALIZAR CARRINHO */
 function atualizarCarrinho(){
 
   let lista = document.getElementById("listaCarrinho");
@@ -367,21 +383,32 @@ function atualizarCarrinho(){
     lista.innerHTML += `
       <li>
         ${produto.nome} - ${produto.preco} MT
-
-        <button onclick="removerProduto(${index})">
-          ❌
-        </button>
+        <button onclick="removerProduto(${index})">❌</button>
       </li>
     `;
   });
 
-  total.innerHTML = "Total: " + soma + " MT";
+  /* 🚚 ENTREGA */
+  let entrega = parseInt(document.getElementById("metodoEntrega")?.value || 0);
+
+  // 🚚 entrega grátis acima de 2000 MT
+  if(soma >= 2000){
+    entrega = 0;
+  }
+
+  let totalFinal = soma + entrega;
+
+  total.innerHTML = `
+    Subtotal: ${soma} MT <br>
+    Entrega: ${entrega} MT <br>
+    <strong>Total: ${totalFinal} MT</strong>
+  `;
 }
 
 /* ❌ REMOVER PRODUTO */
 function removerProduto(index){
 
-  carrinho.splice(index,1);
+  carrinho.splice(index, 1);
 
   atualizarCarrinho();
   atualizarContador();
@@ -391,6 +418,8 @@ function removerProduto(index){
 function finalizarCompra(){
 
   let metodo = document.getElementById("metodoPagamento").value;
+  let endereco = document.getElementById("endereco");
+  let entrega = document.getElementById("metodoEntrega").value;
 
   if(carrinho.length == 0){
     alert("Carrinho vazio");
@@ -402,17 +431,49 @@ function finalizarCompra(){
     return;
   }
 
-  alert("Compra realizada com sucesso via " + metodo);
+  let tipoEntrega = "";
+  let enderecoFinal = "";
 
+  /* 🚚 REGRAS DE ENTREGA */
+  if(entrega == "0"){
+    tipoEntrega = "Recolha na loja";
+    enderecoFinal = "Não necessário";
+
+  } else {
+
+    if(!endereco.value){
+      alert("Digite o endereço de entrega");
+      return;
+    }
+
+    enderecoFinal = endereco.value;
+
+    if(entrega == "50"){
+      tipoEntrega = "Entrega normal";
+    } else {
+      tipoEntrega = "Entrega rápida";
+    }
+  }
+
+  alert(
+    "✅ COMPRA REALIZADA\n\n" +
+    "Pagamento: " + metodo + "\n" +
+    "Entrega: " + tipoEntrega + "\n" +
+    "Endereço: " + enderecoFinal
+  );
+
+  /* limpar carrinho */
   carrinho = [];
-
   atualizarCarrinho();
   atualizarContador();
 }
 
-/* 🛒 CONTADOR NO MENU */
+/* 🛒 CONTADOR */
 function atualizarContador(){
-  document.getElementById("contadorCarrinho").innerText = carrinho.length;
+  let contador = document.getElementById("contadorCarrinho");
+  if(contador){
+    contador.innerText = carrinho.length;
+  }
 }
 
 /* 📌 ABRIR CARRINHO */
@@ -423,7 +484,6 @@ function abrirCarrinho(){
 }
 
 </script>
-  
   
   
  <!-- SOBRE NÓS -->
