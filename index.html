@@ -1,0 +1,530 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VidaVerde Moçambique</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+<section id="home"></section>
+<header>
+  <img src="logoo.png" alt="VidaVerde Logo" class="logo">
+  <!--<h1>VidaVerde Moçambique</h1>-->
+  <p>Produtos Naturais e Sustentáveis</p>
+</header>
+
+<nav>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#sobre">Sobre Nós</a></li>
+    <li><a href="#colaboradores">Colaboradores</a></li>
+    <li><a href="#contactos">Contactos</a></li>
+  </ul>
+</nav>
+
+  <section class="produtos">
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?q=80&w=800" alt="Produto">
+
+    <h2>Sabonete Orgânico</h2>
+
+    <p>
+      Sabonete natural produzido com ingredientes ecológicos.
+    </p>
+
+    <h3>350 MT</h3>
+
+    <button onclick="adicionarCarrinho('Sabonete Orgânico',350)">
+      Comprar
+    </button>
+  </div>
+
+  <div class="card">
+    <img src="imagens/sabao.jfif" alt="Sabonete Orgânico">
+
+    <h2>Sabonete natural</h2>
+
+    <p>
+      Produto natural para eliminacao de manchas na pele.
+    </p>
+
+    <h3>500 MT</h3>
+
+    <button onclick="adicionarCarrinho('sabonete natural',500)">
+      Comprar
+    </button>
+  </div>
+  
+   <div class="card">
+     <img src="imagens/coco.jfif" alt="Sabonete Orgânico">
+
+    <h2>Óleo de coco</h2>
+
+    <p>
+      Produto natural para tratamento de cabelo.
+    </p>
+
+    <h3>100 MT</h3>
+
+    <button onclick="adicionarCarrinho('Óleo de coco',100)">
+      Comprar
+    </button>
+  </div>
+  
+   <div class="card">
+     <img src="imagens/mel.jfif" alt="Sabonete Orgânico">
+
+    <h2>mel com arroma</h2>
+
+    <p>
+      Mel natural com aromatisantes para aplicar no rosto.
+    </p>
+
+    <h3>650 MT</h3>
+
+    <button onclick="adicionarCarrinho('mel com aroma',650)">
+      Comprar
+    </button>
+  </div>
+  
+   <div class="card">
+    <img src="imagens/limao.jfif" alt="Sabonete Orgânico">
+
+    <h2>desifetante de limao</h2>
+
+    <p>
+      Produto natural para desifetar as maos e objetos.
+    </p>
+
+    <h3>70 MT</h3>
+
+    <button onclick="adicionarCarrinho(desifetante de limao',70)">
+      Comprar
+    </button>
+  </div>
+  
+   <div class="card">
+     <img src="imagens/oleo capilar de abacate.webp" alt="Sabonete Orgânico">
+
+    <h2>Óleo capilar</h2>
+
+    <p>
+      Produto natural para tratamento de cabelo.
+    </p>
+
+    <h3>750 MT</h3>
+
+    <button onclick="adicionarCarrinho('Óle capilar',750)">
+      Comprar
+    </button>
+  </div>
+  
+   <div class="card">
+       <img src="imagens/creme.JPEG" alt="Sabonete Orgânico">
+
+    <h2>creme</h2>
+
+    <p>
+      Produto natural para aplicar no corpo.
+    </p>
+
+    <h3>250 MT</h3>
+
+    <button onclick="adicionarCarrinho('creme',250)">
+      Comprar
+    </button>
+  </div>
+  
+   <div class="card">
+    <img src="imagens/champo.webp" alt="Sabonete Orgânico">
+
+    <h2>campoo</h2>
+
+    <p>
+      Produto natural para lavagem de cabelo.
+    </p>
+
+    <h3>700 MT</h3>
+
+    <button onclick="adicionarCarrinho('champoo',700)">
+      Comprar
+    </button>
+  </div>
+ 
+  
+   <div class="card">
+      <img src="imagens/cremeb.JPEG" alt="Sabonete Orgânico">
+
+    <h2>creme de banana </h2>
+
+    <p>
+      Produto natural para aplicar no corpo.
+    </p>
+
+    <h3>800 MT</h3>
+
+    <button onclick="adicionarCarrinho('creme de banana',800)">
+      Comprar
+    </button>
+  </div>
+  
+  
+   <div class="card">
+         <img src="imagens/sabao.JPEG" alt="Sabonete Orgânico">
+
+    <h2>sabao</h2>
+
+    <p>
+      sabao natural feito na base de ervas.
+    </p>
+
+    <h3>150 MT</h3>
+
+    <button onclick="adicionarCarrinho('sabao',150)">
+      Comprar
+    </button>
+  </div>
+  
+   <div class="card">
+       <img src="imagens/cremec.JPEG" alt="Sabonete Orgânico">
+
+    <h2>creme de aloe</h2>
+
+    <p>
+      Produto natural para aplicar na pele.
+    </p>
+
+    <h3>850 MT</h3>
+
+    <button onclick="adicionarCarrinho('creme de aloe',850)">
+      Comprar
+    </button>
+  </div>
+  
+  
+   <div class="card">
+	<img src="imagens/genge.JPEG" alt="Sabonete Orgânico">
+
+    <h2>Óleo de gengibre</h2>
+
+    <p>
+      oleo natural para aplicar na pele.
+    </p>
+
+    <h3>400 MT</h3>
+
+    <button onclick="adicionarCarrinho('Óleo de gengibre',400)">
+      Comprar
+    </button>
+  </div>
+  
+   <div class="card">
+    
+	<img src="imagens/cremme.JPEG" alt="Sabonete Orgânico">
+
+    <h2>creme</h2>
+
+    <p>
+      creme natural feito na base de ovo.
+    </p>
+
+    <h3>900 MT</h3>
+
+    <button onclick="adicionarCarrinho('creme de ovo',900)">
+      Comprar
+    </button>
+  </div>
+  
+   <div class="card">
+    <img src="imagens/cremer.JPEG" alt="Sabonete Orgânico">
+
+    <h2>creme</h2>
+
+    <p>
+      Creme natural feito na base de beteraba.
+    </p>
+
+    <h3>600 MT</h3>
+
+    <button onclick="adicionarCarrinho('creme de beteraba',600)">
+      Comprar
+    </button>
+  </div>
+  
+   <div class="card">
+    <img src="imagens/cremen.JPEG" alt="Sabonete Orgânico">
+
+    <h2>Creme</h2>
+
+    <p>
+      creme natural feito na base de cenoura.
+    </p>
+
+    <h3>600 MT</h3>
+
+    <button onclick="adicionarCarrinho('creme de cenoura',600)">
+      Comprar
+    </button>
+  </div>
+   <div class="card">
+     <img src="imagens/pasta.JPEG" alt="Sabonete Orgânico">
+
+    <h2>Pasta de dente</h2>
+
+    <p>
+      Produto natural para limpesa de dentes e saude dental.
+    </p>
+
+    <h3>600 MT</h3>
+
+    <button onclick="adicionarCarrinho('pasta de dente',600)">
+      Comprar
+    </button>
+  </div>
+  </section>
+  
+  
+  <section class="carrinho">
+
+  <h2>🛒 Carrinho</h2>
+
+  <ul id="listaCarrinho"></ul>
+
+  <h3 id="total">
+    Total: 0 MT
+  </h3>
+
+  <select id="metodoPagamento">
+
+    <option value="">
+      Escolha o método de pagamento
+    </option>
+
+    <option>M-Pesa</option>
+
+    <option>e-Mola</option>
+
+    <option>Cartão Bancário</option>
+
+    <option>Pagamento na Entrega</option>
+
+  </select>
+
+  <br><br>
+
+  <button onclick="finalizarCompra()">
+    Finalizar Compra
+  </button>
+
+</section>
+
+
+
+<script>
+
+let carrinho = [];
+
+function adicionarCarrinho(nome, preco){
+
+  carrinho.push({
+    nome: nome,
+    preco: preco
+  });
+
+  alert(nome + " foi adicionado ao carrinho 🛒");
+
+  atualizarCarrinho();
+}
+
+function atualizarCarrinho(){
+
+  let lista = document.getElementById("listaCarrinho");
+
+  let total = document.getElementById("total");
+
+  lista.innerHTML = "";
+
+  let soma = 0;
+
+  carrinho.forEach((produto, index)=>{
+
+    soma += produto.preco;
+
+    lista.innerHTML += `
+      <li>
+        ${produto.nome} - ${produto.preco} MT
+
+        <button onclick="removerProduto(${index})">
+          ❌
+        </button>
+      </li>
+    `;
+  });
+
+  total.innerHTML = `
+    Total: ${soma} MT
+  `;
+}
+
+function removerProduto(index){
+
+  carrinho.splice(index,1);
+
+  atualizarCarrinho();
+}
+
+function finalizarCompra(){
+
+  let metodo =
+  document.getElementById("metodoPagamento").value;
+
+  if(carrinho.length == 0){
+
+    alert("Carrinho vazio");
+
+    return;
+  }
+
+  if(metodo == ""){
+
+    alert("Escolha um método de pagamento");
+
+    return;
+  }
+
+  alert(
+    "Compra realizada com sucesso via " + metodo
+  );
+
+  carrinho = [];
+
+  atualizarCarrinho();
+}
+
+</script>
+  
+  
+  
+  
+ <!-- SOBRE NÓS -->
+<section class="info" id="sobre">
+
+  <h2>Sobre Nós</h2>
+
+  <p>
+    A VidaVerde Moçambique é uma loja online dedicada
+    à venda de produtos naturais e sustentáveis.
+  </p>
+
+  <p>
+    Nosso objectivo é promover saúde, bem-estar e
+    preservação ambiental.
+  </p>
+
+  <p>
+    Trabalhamos com produtos feitos a partir de
+    ingredientes naturais cuidadosamente seleccionados,
+    oferecendo qualidade, segurança e benefícios para
+    o corpo e para o meio ambiente.
+  </p>
+
+  <p>
+    Acreditamos que pequenas mudanças nos hábitos
+    diários podem contribuir para uma vida mais
+    saudável e para um planeta mais sustentável.
+  </p>
+
+  <p>
+    Nossa loja disponibiliza cosméticos naturais,
+    óleos essenciais, sabonetes artesanais,
+    produtos orgânicos e diversos itens ecológicos
+    para toda a família.
+  </p>
+
+  <p>
+    A VidaVerde Moçambique procura incentivar o consumo
+    consciente, valorizando produtos sustentáveis e
+    promovendo o uso responsável dos recursos naturais.
+  </p>
+
+  <p>
+    Estamos comprometidos em oferecer um atendimento
+    de qualidade, produtos confiáveis e uma experiência
+    simples e segura para todos os nossos clientes.
+  </p>
+
+</section>
+
+<!-- COLABORADORES -->
+
+<section class="info" id="colaboradores">
+
+  <h2>Colaboradores</h2>
+
+  <div class="membro">
+    <img src="imagens/nando.jpg" class="foto-colab">
+    <div class="colab-bar">
+  Fernando Manejo
+</div>
+    <p>Desenvolvedor Web</p>
+  </div>
+
+  <div class="membro">
+  <img src="https://randomuser.me/api/portraits/women/44.jpg" class="foto-colab">
+    <div class="colab-bar">Maria José</div>
+    <p>Marketing Digital</p>
+  </div>
+
+  <div class="membro">
+  <img src="https://randomuser.me/api/portraits/men/65.jpg" class="foto-colab">
+    <div class="colab-bar">Carlos Alberto</div>
+    <p>Atendimento ao Cliente</p>
+  </div>
+
+</section>
+
+
+<!-- CONTACTOS -->
+
+<section class="info" id="contactos">
+
+  <h2>Contactos</h2>
+
+  <p>Email: vidaverde@gmail.com</p>
+
+  <p>Telefone: +258 84 000 0000</p>
+
+  <p>Maputo - Moçambique</p>
+
+</section>
+
+<div class="social">
+
+  <a href="https://facebook.com" target="_blank" class="facebook">
+    <i class="fa-brands fa-facebook-f"></i>
+  </a>
+
+  <a href="https://instagram.com" target="_blank" class="instagram">
+    <i class="fa-brands fa-instagram"></i>
+  </a>
+
+  <a href="https://wa.me/258840000000" target="_blank" class="whatsapp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+</div>
+
+
+</div>
+   </form>
+<footer class="footer">
+  <p>© VidaVerde Moçambique. Todos os direitos reservados. Desenvolvido por VidaVerde</p>
+</footer>
+</body>
+</html>
