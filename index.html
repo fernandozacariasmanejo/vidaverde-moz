@@ -23,6 +23,12 @@
     <li><a href="#home">Home</a></li>
     <li><a href="#sobre">Sobre Nós</a></li>
     <li><a href="#colaboradores">Colaboradores</a></li>
+	  <!-- 🛒 BOTÃO CARRINHO -->
+    <li>
+      <a href="#carrinho" onclick="abrirCarrinho()">
+        🛒 Carrinho (<span id="contadorCarrinho">0</span>)
+      </a>
+    </li>
     <li><a href="#contactos">Contactos</a></li>
   </ul>
 </nav>
@@ -288,9 +294,9 @@
     </button>
   </div>
   </section>
-  
-  
-  <section class="carrinho">
+
+	
+  <section class="carrinho" id="carrinho">
 
   <h2>🛒 Carrinho</h2>
 
@@ -330,6 +336,7 @@
 
 let carrinho = [];
 
+/* 🛒 ADICIONAR PRODUTO */
 function adicionarCarrinho(nome, preco){
 
   carrinho.push({
@@ -340,12 +347,13 @@ function adicionarCarrinho(nome, preco){
   alert(nome + " foi adicionado ao carrinho 🛒");
 
   atualizarCarrinho();
+  atualizarContador();
 }
 
+/* 🧾 ATUALIZAR LISTA DO CARRINHO */
 function atualizarCarrinho(){
 
   let lista = document.getElementById("listaCarrinho");
-
   let total = document.getElementById("total");
 
   lista.innerHTML = "";
@@ -367,48 +375,54 @@ function atualizarCarrinho(){
     `;
   });
 
-  total.innerHTML = `
-    Total: ${soma} MT
-  `;
+  total.innerHTML = "Total: " + soma + " MT";
 }
 
+/* ❌ REMOVER PRODUTO */
 function removerProduto(index){
 
   carrinho.splice(index,1);
 
   atualizarCarrinho();
+  atualizarContador();
 }
 
+/* 💳 FINALIZAR COMPRA */
 function finalizarCompra(){
 
-  let metodo =
-  document.getElementById("metodoPagamento").value;
+  let metodo = document.getElementById("metodoPagamento").value;
 
   if(carrinho.length == 0){
-
     alert("Carrinho vazio");
-
     return;
   }
 
   if(metodo == ""){
-
     alert("Escolha um método de pagamento");
-
     return;
   }
 
-  alert(
-    "Compra realizada com sucesso via " + metodo
-  );
+  alert("Compra realizada com sucesso via " + metodo);
 
   carrinho = [];
 
   atualizarCarrinho();
+  atualizarContador();
+}
+
+/* 🛒 CONTADOR NO MENU */
+function atualizarContador(){
+  document.getElementById("contadorCarrinho").innerText = carrinho.length;
+}
+
+/* 📌 ABRIR CARRINHO */
+function abrirCarrinho(){
+  document.getElementById("carrinho").scrollIntoView({
+    behavior: "smooth"
+  });
 }
 
 </script>
-  
   
   
   
